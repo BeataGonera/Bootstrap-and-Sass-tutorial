@@ -1,6 +1,8 @@
 $primary: #CF2663;
+$white: #FFFFFF;
 $accents: #C997C7;
 $plain:  Comfortaa, sans-serif;
+$logo: #FFFFFF;
 
 @mixin flex-center(){
     display: flex;
@@ -73,6 +75,10 @@ div#theme-line-container{
   $dasharray: 1vw;
   $height: 100%;
   $width: 100%;
+
+  #animated-dashed-rectangle{
+    width: 95%;
+  }
   
   svg#animated-dashed-rectangle {
       width: 100%;
@@ -107,14 +113,14 @@ div#theme-line-container:hover > svg#animated-dashed-rectangle > #stroke{
   animation-play-state: running;
 }
 
-
-
-
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
+
 
 $theme-colors: (
-    'primary': #CF2663
+    'primary': #CF2663,
+    'white': #FFFFFF
 );
 
 // $custom-theme-colours: (
