@@ -1,11 +1,11 @@
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../src/sass/main.scss'
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from 'react-router-dom'
+
 
 
 const root = ReactDOM.createRoot(
@@ -13,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 
