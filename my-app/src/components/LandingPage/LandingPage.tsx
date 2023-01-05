@@ -21,9 +21,18 @@ export const LandingPage = () => {
                     <rect id='stroke'/>
                 </svg>
 
-                <svg id="button-chevron-down">
-                    <circle/>
-                </svg>
+                <div id='button-chevron-down'>
+                    <svg>
+                        <g>
+                            <circle id='biggest-circle' cx="45" cy="45" r="45" />
+                            <circle id='rotating-circle' cx="50%" cy="50%" r="35" />
+                            <text id="chd" x='50%' y='50%'>&#xF282;</text>
+                        </g>
+                    </svg>
+
+
+                    
+                </div>
 
             </div>
 

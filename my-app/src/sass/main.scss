@@ -107,7 +107,35 @@ div#theme-line-container{
     }
   }
 
+  div#button-chevron-down{
+    position: absolute;
+    left: calc(95vw/2 - 45px);
+    top: 130px;
+    z-index: 3;
+    fill: white;
+
+    svg{
+      width: 90px;
+      height: 90px;
+      z-index: 4;
+        circle#rotating-circle{
+          z-index: 5;
+          fill: white;
+          stroke: $primary;
+          stroke-width: 3px;
+          stroke-dasharray: 5;
+        }
+
+        text#chd{
+          background-color: black;
+          z-index: 6;
+          width:fit-content;
+          height: fit-content;
+        }
+    }
+  }
 }
+
 
 div#theme-line-container:hover > svg#animated-dashed-rectangle > #stroke{
   animation-play-state: running;
