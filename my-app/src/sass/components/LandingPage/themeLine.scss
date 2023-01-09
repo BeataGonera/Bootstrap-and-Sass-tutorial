@@ -1,0 +1,104 @@
+div#theme-line-container{
+    width: 95vw;
+    height: 300px;
+    margin: 5vh auto;
+    position: relative;
+  
+    div.pink-rectangle {
+      width: 90%;
+      height: 140px;
+      @include flex-center();
+      position: absolute;
+      top: 30px;
+      right: 5%;
+      z-index: 1;
+    
+      h1{
+          font-family: $plain;
+          font-size: 32px;
+          color: white;
+      }
+    }
+    
+    $dasharray: 1vw;
+    $height: 100%;
+    $width: 100%;
+  
+    #animated-dashed-rectangle{
+      width: 95%;
+    }
+    
+    svg#animated-dashed-rectangle {
+        width: 100%;
+        position: absolute;
+  
+      #stroke {
+        @include flex-center();
+        width: $height;
+        height: $width;
+        stroke: $accents;
+        stroke-width: 5px;
+        stroke-dasharray: $dasharray;
+        fill: none;
+        animation: sketchIn 15s linear alternate infinite;
+        animation-play-state: paused; 
+    
+    
+        @keyframes sketchIn {
+          0% {
+            stroke-dashoffset: $dasharray;
+          }
+          100% {
+            stroke-dashoffset: 220px;
+          }
+        }
+      }
+    }
+  
+    div#button-chevron-down{
+      position: absolute;
+      left: calc(95vw/2 - 45px);
+      top: 130px;
+      z-index: 3;
+      fill: white;
+  
+      svg{
+        width: 90px;
+        height: 90px;
+        overflow: visible;
+          circle#rotating-circle{
+            fill: white;
+            stroke: $primary;
+            stroke-width: 3px;
+            stroke-dasharray: 5;
+            cursor: pointer;
+          }
+  
+          circle#rotating-circle:hover{
+            transform-box: view-box;
+            transform-origin: center;
+            animation: rotatingAnimation 3s ease-in-out alternate 1;
+  
+            @keyframes rotatingAnimation {
+              from {transform: rotate(0deg);}
+               to {transform: rotate(360deg);}
+            }
+          }
+  
+          text#chd{
+            color: black;
+            font-size: 20px;
+            width: 45px;
+            height: 45px;
+            font-family: 'Bootstrap-icons';
+            font-weight: bold;
+            cursor: pointer;
+          }
+      }
+    }
+  }
+  
+  
+  div#theme-line-container:hover > svg#animated-dashed-rectangle > #stroke{
+    animation-play-state: running;
+  }

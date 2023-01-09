@@ -1,0 +1,30 @@
+nav{
+    font-family: $plain;
+    background-color: black;
+      a.navbar-brand{ 
+        color: $primary;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 32px;
+        font-weight: 700;    
+      }
+    
+      ul.navbar-nav li.nav-item .nav-link{
+        color: white;
+        position: relative;
+      }
+        
+         ul.navbar-nav li.nav-item .nav-link:after{
+            content:"";
+            position: absolute;
+            background-color: $primary;
+            height: 1px;
+            width: 0;
+            bottom: 5px;
+            transition: 0.3s;
+            left: 0;
+         }
+        
+         ul.navbar-nav li.nav-item .nav-link:hover::after{
+            width: 100%; 
+        }
+    }

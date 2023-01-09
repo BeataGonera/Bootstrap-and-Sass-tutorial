@@ -50,7 +50,7 @@ export const NavBar = () => {
         <button className="btn btn-outline-white" type="submit">Search</button>
       </form>
 
-      <button className="btn btn-primary d-flex justify-content-around" style={{width: '100px'}}>
+      <button className="btn btn-primary d-flex justify-content-around" style={{width: '100px', height: 'fit-content'}}>
           <i className="bi bi-bag mr-2"></i>
         Cart
       </button>
