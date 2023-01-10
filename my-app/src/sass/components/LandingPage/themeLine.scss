@@ -36,7 +36,7 @@ div#theme-line-container{
         @include flex-center();
         width: $height;
         height: $width;
-        stroke: $accents;
+        stroke: lighten($primary, 30);
         stroke-width: 5px;
         stroke-dasharray: $dasharray;
         fill: none;

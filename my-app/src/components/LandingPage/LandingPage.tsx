@@ -1,7 +1,7 @@
-import { Footer } from '../Footer/Footer';
-import { NavBar } from '../NavBar/NavBar'
+import { NavBar } from '../NavBar/NavBar';
 import { Carousel } from './Carousel';
 import { ThemeLine } from './themeLine';
+import { CakesGrid } from './CakesGrid'; 
 
 
 
@@ -38,7 +38,9 @@ export const LandingPage = () => {
             </div>
         </section>
 
-        <Footer/>
+        <section>
+            <CakesGrid/>
+        </section>
         </>
      );
 }
