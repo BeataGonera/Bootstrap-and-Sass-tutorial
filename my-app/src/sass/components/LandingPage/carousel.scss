@@ -1,7 +1,12 @@
+.cakes-carousel-container{
+    margin-top: 60px;
+}
+
 div.carousel-item{
     height: 40vh;
 
     img{
         width: 100%;
+        vertical-align: middle;
     }
 }

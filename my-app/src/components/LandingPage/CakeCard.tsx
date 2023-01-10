@@ -1,51 +1,35 @@
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from 'react';
 import { storage } from '../../firebase';
 
 
-export const CakeCard = () => {
+interface CakeCard{
+  name: string;
+  photo: string;
+  description: string;
+  price: string;
+}
 
-    const [url, setUrl] = useState('');
-
-    useEffect(() => {
-
-    },[])
-
-    useEffect(() => {
-        getDownloadURL(ref(storage, 'images/cake4.jpeg'))
-        .then((url) => {
-            setUrl(url)
-        })
-        .catch((error) => {
-            switch (error.code) {
-                case 'storage/object-not-found':
-                  // File doesn't exist
-                  break;
-                case 'storage/unauthorized':
-                  // User doesn't have permission to access the object
-                  break;
-                case 'storage/canceled':
-                  // User canceled the upload
-                  break;
-                case 'storage/unknown':
-                  // Unknown error occurred, inspect the server response
-                  break;
-            }
-        });
-    },[])
+export const CakeCard:FC<CakeCard> = ({name, photo, description, price}) => {
     
 
     return ( 
-
-
         <div className="card" style={{width: '18rem'}}>
-        <img src={url} className="card-img-top" alt="..."/>
+          <div className='picture-container'>
+        <img src={photo} className="card-img-top" alt={name}/>
+          </div>
         <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 className="card-title">{name}</h5>
+            <div className="card-text-container">
+            <p className="card-text">{description}</p>
+            </div>
+            <p className="card-text">{price}</p>
             <a href="#" className="btn btn-primary">
                 <i className="bi bi-cart"></i>
                 Add to cart</a>
+
+            <a href="#" className="card-link">Details</a>
+            <a href="#" className="card-link">Ingredients</a>
         </div>
         </div>     
      );
